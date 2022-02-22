@@ -1,40 +1,39 @@
 <div class="card">
-    <h3 class="card-header bg-warning">
-        <a [routerLink]="['/transactlist/',1]">
-            <img src="../../../assets/left-arrow.svg" height="32" alt="">
-        </a>
-        
-    </h3>    
-    <div class="card-body">
-        <form>
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-danger">Cargo</button>
-                <button type="button" class="btn btn-primary">Abono</button>
-            </div>              
-            <div class="form-group">
-              <label for="Categoria">Categoria</label>
-              <select class="form-control">
-                  <option *ngFor="let item of aCategorias" value="{{item.id}}">{{item.nombre}}</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="monto">Monto</label>
-              <input type="number" class="form-control" >
-            </div>
-            
-            <div class="form-group">
-              <label for="Fecha">Fecha</label>
-              <input type="date" class="form-control" id="fecha">
-            </div>
-            
-            <div class="form-group">
-              <label for="Nota">Nota</label>
-              <input type="text" class="form-control" id="Nota" placeholder="Nota">
-            </div>
-            <div class="btn-group btn-block" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary">Cancelar</button>
-                <button type="button" class="btn btn-success">Aceptar</button>
-              </div>
-          </form>
-    </div>
+  <h3 class="card-header bg-warning">
+    Edit
+  </h3>
+  <div class="card-body">
+    <form>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn " [ngClass]="{'btn-outline-secondary':bTipo==2,'btn-danger':bTipo==1}"
+          (click)="bTipo=1">Cargo</button>
+        <button type="button" class="btn " [ngClass]="{'btn-outline-secondary':bTipo==1,'btn-success':bTipo==2}"
+          (click)="bTipo=2">Abono</button>
+      </div>
+      <div class="form-group">
+        <label for="Categoria">Categoria</label>
+        <select class="form-control">
+          <option *ngFor="let item of aCategorias" value="{{item.id}}">{{item.nombre}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="monto">Monto</label>
+        <input type="number" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="Fecha">Fecha</label>
+        <input type="date" class="form-control" id="fecha">
+      </div>
+
+      <div class="form-group">
+        <label for="Nota">Nota</label>
+        <input type="text" class="form-control" id="Nota" placeholder="Nota">
+      </div>
+      <div class="btn-group btn-block" role="group" aria-label="Basic example">
+        <a [routerLink]="['/transactlist/',1]" class="btn btn-secondary btn-lg">Cancelar</a>
+        <button type="button" class="btn btn-success btn-lg">Aceptar</button>
+      </div>
+    </form>
+  </div>
 </div>

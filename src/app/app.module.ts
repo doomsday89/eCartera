@@ -9,6 +9,8 @@ import { CuentalistComponent } from './components/cuentalist/cuentalist.componen
 import { CuentaComponent } from './components/cuenta/cuenta.component';
 import { TransacComponent } from './components/transac/transac.component';
 import { TranDetailsComponent } from './components/tran-details/tran-details.component';
+import { FormsModule } from '@angular/forms';
+import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { TranDetailsComponent } from './components/tran-details/tran-details.com
     CuentalistComponent,
     CuentaComponent,
     TransacComponent,
-    TranDetailsComponent
+    TranDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    NgbDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,7 +4,9 @@
             <img src="../../../assets/left-arrow.svg" height="32" alt="">
         </a>
         {{cuenta}}
-        <img class="float-right" src="../../../assets/plus.svg" height="32">
+        <a [routerLink]="['/transact/:0']">
+            <img class="float-right" src="../../../assets/plus.svg" height="32">
+        </a>
     </h3>
     <h3 class="card-header">
         $10000
@@ -12,14 +14,14 @@
     </h3>
     <div class="card-body">
         <div class="list-group">
-            <a [routerLink]="['/transact/', item.id]" class="list-group-item list-group-item-action" *ngFor="let item of aTransactions"> 
+            <a [routerLink]="['/transact/', item.id]" class=" list-group-item-action" *ngFor="let item of aTransactions"> 
                 <div class="media">
                 <img src='../../../assets/checked.svg' class="mr-3" alt="icon" height="32">
                 <div class="media-body">
                   <h4 class="mt-0">{{item.fecha|date:"dd MMMM"}}
                     <strong class="float-right">{{item.monto | currency:"$"}}</strong>
                   </h4>
-                  <p>{{item.categoria +item.para}} </p>
+                  <p>{{item.categoria + ': '+item.para}} </p>
                   
                 </div>
               </div>

@@ -12,4 +12,5 @@ export class TranDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
   aCategorias=[];
+  bTipo=1;
 }

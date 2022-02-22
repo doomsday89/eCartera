@@ -1,22 +1,30 @@
 <div class="card">
-    <h3 class="card-header text-white bg-warning">
-        Cuentas
-        <a [routerLink]="['/cuenta/', 0]">
-            <img class="float-right" src="../../../assets/plus.svg" height="32">
-        </a>
-    </h3>
-    
-    <div class="card-body">
-        <div class="list-group">
-            <a [routerLink]="['transactlist/', item.id]" class="list-group-item list-group-item-action" *ngFor="let item of aCuentas"> 
-                <div class="media">
-                <img src={{item.icon}} class="mr-3" alt="icon" height="32">
-                <div class="media-body">
-                  <h5 class="mt-0">{{item.nombre}}</h5>
-                  <p>Saldo{{item.monto}}</p>
-                </div>
-              </div>
+  <h3 class="card-header text-white bg-warning">
+    Cuentas
+    <a [routerLink]="['/cuenta/', 0]">
+      <img class="float-right" src="../../../assets/plus.svg" height="32">
+    </a>
+  </h3>
+
+  <div class="card-body">
+    <div class="list-group">
+      <a [routerLink]="['transactlist/', item.id]" class="list-group-item list-group-item-action"
+        *ngFor="let item of aCuentas">
+        <div class="media">
+          <img src={{item.icon}} class="mr-3" alt="icon" height="48">
+          <div class="media-body">
+            <h5 class="mt-0">{{item.nombre}}</h5>
+            <p>Saldo {{item.monto}}</p>
+          </div>
+          <div class="btn-group onHover"> 
+            <a [routerLink]="['/cuenta/',item.id]">
+              <img src="../../../assets/config.svg" height="32" alt="">
             </a>
+          </div>
         </div>
+
+
+      </a>
     </div>
+  </div>
 </div>

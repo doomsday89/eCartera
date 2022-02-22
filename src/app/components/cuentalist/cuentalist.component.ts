@@ -10,7 +10,12 @@ import { TransactService } from 'src/app/services/transact.service';
 export class CuentalistComponent implements OnInit {
 
   constructor(private _service:TransactService) { 
-    this.aCuentas=this._service.getCuentas();
+    this._service.getCuentas().subscribe(data=>{      
+      data.forEach((element:any)=>{
+        var oCuenta= element.payload.doc.data();        
+        this.aCuentas.push( {id:element.payload.doc.id, ... oCuenta});
+      });      
+    })
   }
 
   ngOnInit(): void {

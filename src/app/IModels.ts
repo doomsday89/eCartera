@@ -11,31 +11,18 @@ export class Tipo {
     }
 }
 
-export class Cuenta{
+export interface Cuenta{
     id:number;
     nombre:string;
     tipo:number;
     numero:string;
-    expira:string;
-    corte:string;
+    expira:Date;
+    corte:number;
     limite:number;
     moneda:string;
     nota:string;
     icon:string;
-    activo:boolean;
-    constructor(Id:number,Name:string,Tipo:number,Num:string,Exp:string,Corte:string,lim:number,Moneda:string,Note:string){
-        this.id=Id;
-        this.nombre=Name;
-        this.tipo=Tipo;
-        this.numero=Num;
-        this.expira=Exp;
-        this.corte=Corte;
-        this.limite=lim;
-        this.moneda=Moneda;
-        this.nota=Note;
-        this.icon='card';
-        this.activo=true;
-    }
+    activo:boolean;    
 }
 
 export interface Transac{

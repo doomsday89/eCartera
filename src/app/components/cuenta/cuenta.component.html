@@ -3,13 +3,13 @@
         <a [routerLink]="['']">
             <img src="../../../assets/left-arrow.svg" height="32" alt="">
         </a>
-        {{cuenta}}
+        {{titulo}}
     </h3>    
     <div class="card-body">
         <form>
             <div class="form-group">
-              <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" id="nombre" placeholder="Nombre cuenta">
+              <label for="cuenta">Nombre</label>
+              <input [(ngModel)]="oCuenta.nombre" type="text" class="form-control" name="cuenta" placeholder="Nombre cuenta">
             </div>
             <div class="form-group">
               <label for="Tipo">Tipo</label>
@@ -19,31 +19,43 @@
             </div>
             <div class="form-group">
               <label for="nombre">Numero</label>
-              <input type="text" class="form-control" id="Numero" placeholder="Numero cuenta" maxlength="16">
+              <input [(ngModel)]="oCuenta.numero" type="text" class="form-control" name="Numero" placeholder="Numero cuenta" maxlength="16">
             </div>
             <div class="form-group">
               <label for="limite">Limite</label>
-              <input type="number" class="form-control" id="limite" placeholder="">
+              <input [(ngModel)]="oCuenta.limite" type="number" class="form-control" name="limite" placeholder="">
             </div>
             <div class="form-group">
               <label for="Corte">Corte</label>
-              <input type="text" class="form-control" id="Corte" placeholder="fecha de Corte">
+              <input [(ngModel)]="oCuenta.corte" type="text" class="form-control" name="Corte" placeholder="fecha de Corte">
             </div>
+            
             <div class="form-group">
-              <label for="Expira">Expira</label>
-              <input type="text" class="form-control" id="Expira" placeholder="fecha expiración">
-            </div>
+              <label for="expira">expira</label>
+              <div class="input-group col-md-3">
+                <input class="form-control" name="dp" [(ngModel)]="FechaExp" ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                </div>
+              </div>{{oCuenta.expira}}
+              </div>
+
+
             <div class="form-group">
               <label for="Moneda">Moneda</label>
-              <input type="text" class="form-control" id="Moneda" placeholder="Moneda">
+              <input [(ngModel)]="oCuenta.moneda" type="text" class="form-control" name="Moneda" placeholder="Moneda">
             </div>
             <div class="form-group">
               <label for="Nota">Nota</label>
-              <input type="text" class="form-control" id="Nota" placeholder="Nota">
+              <input [(ngModel)]="oCuenta.nota" type="text" class="form-control" name="Nota" placeholder="Nota">
             </div>
             <div class="form-group">
               <label for="icon">icon</label>
-              <input type="file" class="form-control" id="icon" placeholder="icono">
+              <input type="file" class="form-control" name="icon" placeholder="icono">
+            </div>
+            <div class="btn-group btn-block" role="group" aria-label="Basic example">
+              <a [routerLink]="['']" class="btn btn-secondary btn-lg">Cancelar</a>
+              <button type="button" class="btn btn-success btn-lg" (click)="Edit()">Aceptar</button>
             </div>
           </form>
     </div>
